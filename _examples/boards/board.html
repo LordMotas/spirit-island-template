@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<head>
+    <link href="../../_global/css/global.css" rel="stylesheet" />
+    <link href="../../_global/css/board.css" rel="stylesheet" />
+    <script type="text/javascript" src="scripts.js"></script>
+</head>
+
+<body>
+
+    <board>
+        <img class="spirit-image" src="Rock_Worm_by_Hall.jpg" />
+        <img class="spirit-border" src="SandBorder.PNG" />
+        <spirit-name>
+            River Surges in Sunlight
+        </spirit-name>
+
+        <special-rules-container>
+            <special-rules-subtitle>Mountain Home</special-rules-subtitle>
+            <special-rule>
+                For each <fire></fire> showing on your <presence></presence> tracks, do 1 Damage.
+            </special-rule>
+            <special-rules-subtitle>Collapse in a blast of lava and steam</special-rules-subtitle>
+            <special-rule>
+                Push all <beast></beast> and any number of <dahan></dahan>.
+            </special-rule>
+            <special-rules-subtitle>volcanic blah blah blah</special-rules-subtitle>
+            <special-rule>
+                Cards gain <range-plus-1></range-plus-1> if <blight></blight> and <strife></strife> and <disease></disease> and <town></town> and <city></city> and <explorer></explorer> and <beast></beast> and <wilds></wilds> and <badlands></badlands> and <fear></fear>
+            </special-rule>
+        </special-rules-container>
+
+        <growth>
+            <growth-title>Growth (PICK ONE)</growth-title>
+            <growth-table>
+                <growth-cell>
+                    <reclaim-all></reclaim-all>
+                    <growth-text>Reclaim Cards</growth-text>
+                    <!--<reclaim-one></reclaim-one>
+                    <growth-text>Reclaim One</growth-text>-->
+                </growth-cell>
+                <growth-cell>
+                    <!--<discard-cards></discard-cards>
+                    <growth-text>Discard 2 Power Cards</growth-text>-->
+                    <!--<gain-card-play></gain-card-play>
+                    <growth-text>+1 Card Play this turn</growth-text>-->
+                    <gain-power-card></gain-power-card>
+                    <growth-text>Gain Power Card</growth-text>
+                </growth-cell>
+                <growth-cell>
+                    <growth-energy>
+                        <value>3</value>
+                    </growth-energy>
+                    <growth-text>Gain Energy</growth-text>
+                </growth-cell>
+                <growth-border></growth-border>
+                <growth-cell>
+                    <custom-presence>
+                        <!--<presence-no-range></presence-no-range>
+                        <growth-text>Add a Presence to any Land</growth-text>-->
+                        <!--<ignore-range></ignore-range>
+                        <growth-text>You may ignore Range this turn</growth-text>-->
+                        +<presence></presence>
+                        <!--ocean-->
+                        <range-0></range-0>
+                    </custom-presence>
+                    <growth-text>Add a Presence</growth-text>
+                </growth-cell>
+                <growth-cell>
+                    <fire></fire>
+                    <growth-text>Gain Fire</growth-text>
+                </growth-cell>
+                <growth-border></growth-border>
+                <growth-cell>
+                    <gain-power-card></gain-power-card>
+                    <growth-text>Gain Power Card</growth-text>
+                </growth-cell>
+                <growth-cell>
+                    <custom-presence>
+                        +<presence></presence>
+                        <range-4></range-4>
+                    </custom-presence>
+                    <growth-text>Add a Presence</growth-text>
+                </growth-cell>
+                <growth-cell>
+                    <gain-per>
+                        <value>1</value>
+                    </gain-per>
+                    <card-play></card-play>
+                    <growth-text>Gain 1 Energy per Animal</growth-text>
+                </growth-cell>
+                <growth-cell>
+                    <growth-energy>
+                        <value>2</value>
+                    </growth-energy>
+                    <growth-text>Gain Energy</growth-text>
+                </growth-cell>
+            </growth-table>
+        </growth>
+
+        <presence-tracks>
+            <energy-track-table>
+                <energy-track-initial>
+                    <value>1</value>
+                </energy-track-initial>
+                <energy-track>
+                    <value>2</value>
+                    <subtext>2</subtext>
+                </energy-track>
+                <energy-track>
+                    <earth></earth>
+                    <subtext>Earth</subtext>
+                </energy-track>
+                <energy-track-ring>
+                    <energy-top>
+                        <value>3</value>
+                    </energy-top>
+                    <element-bottom>
+                        <fire></fire>
+                    </element-bottom>
+                    <subtext>3</subtext>
+                </energy-track-ring>
+                <energy-track>
+                    <element-combination>
+                        <element-top>
+                            <water></water>
+                        </element-top>
+                        <element-bottom>
+                            <earth></earth>
+                        </element-bottom>
+                    </element-combination>
+                    <subtext>Water, Earth</subtext>
+                </energy-track>
+                <energy-track>
+                    <element-combination>
+                        <element-top>
+                            <fire></fire>
+                        </element-top>
+                        <element-bottom>
+                            <plant></plant>
+                        </element-bottom>
+                    </element-combination>
+                    <subtext>Fire, Plant</subtext>
+                </energy-track>
+            </energy-track-table>
+
+            <card-play-track-table>
+                <card-play-track-initial>
+                    <card-play>
+                        <value>1</value>
+                    </card-play>
+                </card-play-track-initial>
+                <card-play-track>
+                    <card-play-special>
+                        <fire></fire>
+                    </card-play-special>
+                    <subtext>Fire</subtext>
+                </card-play-track>
+                <card-play-track>
+                    <card-play-special>
+                        <earth></earth>
+                    </card-play-special>
+                    <subtext>Earth</subtext>
+                </card-play-track>
+                <card-play-track>
+                    <card-play>
+                        <value>2</value>
+                    </card-play>
+                    <subtext>2</subtext>
+                </card-play-track>
+                <card-play-track>
+                    <card-play-special>
+                        <air></air>
+                    </card-play-special>
+                    <subtext>Air</subtext>
+                </card-play-track>
+                <card-play-track>
+                    <card-play>
+                        <value>3</value>
+                    </card-play>
+                    <subtext>3</subtext>
+                </card-play-track>
+                <card-play-track>
+                    <card-play-special>
+                        <fire></fire>
+                    </card-play-special>
+                    <subtext>Fire</subtext>
+                </card-play-track>
+                <card-play-track>
+                    <card-play>
+                        <value>4</value>
+                    </card-play>
+                    <subtext>4</subtext>
+                </card-play-track>
+            </card-play-track-table>
+        </presence-tracks>
+
+        <innate-powers>
+            <innate-power class="fast">
+                <innate-power-title>explosion</innate-power-title>
+                <info-container>
+                    <info-title>
+                        <info-title-speed>SPEED</info-title-speed>
+                        <info-title-range>RANGE</info-title-range>
+                        <info-title-target>TARGET</info-title-target>
+                    </info-title>
+                    <info>
+                        <innate-info-speed></innate-info-speed>
+                        <innate-info-range>
+                            <range-0></range-0>
+                        </innate-info-range>
+                        <innate-info-target>
+                            <blight></blight>
+                        </innate-info-target>
+                    </info>
+                </info-container>
+                <description-container>
+                    <level>
+                        <threshold>
+                            1<plant></plant>
+                        </threshold>
+                        <div class="description" id="single-line">1 Damage per 2 <fire></fire> you have.</div>
+                    </level>
+                    <level>
+                        <threshold>
+                            3<plant></plant>
+                        </threshold>
+                        <div class="description" id="single-line">Instead, 1 Damage per <fire></fire> you have.</div>
+                    </level>
+                    <level>
+                        <threshold>
+                            4<fire></fire>2<air></air>
+                        </threshold>
+                        <div class="description">You may split this Power's damage among any number of lands with <blight></blight> where you have <presence></presence>.</div>
+                    </level>
+                    <level>
+                        <threshold>
+                            7<fire></fire>
+                        </threshold>
+                        <div class="description">In <blight></blight> where <presence></presence> you <dahan></dahan> have <wilds></wilds> and <strife></strife> then <badlands></badlands> and <disease></disease>.</div>
+                    </level>
+                </description-container>
+            </innate-power>
+            <innate-power class="fast">
+                <innate-power-title>darkness swallows the unwary</innate-power-title>
+                <info-container>
+                    <info-title>
+                        <info-title-speed>SPEED</info-title-speed>
+                        <info-title-range>RANGE</info-title-range>
+                        <info-title-target>TARGET</info-title-target>
+                    </info-title>
+                    <info>
+                        <innate-info-speed></innate-info-speed>
+                        <innate-info-range>
+                            <sacred-site></sacred-site>
+                            <range-1></range-1>
+                        </innate-info-range>
+                        <innate-info-target>
+                            ANY
+                        </innate-info-target>
+                    </info>
+                </info-container>
+                <description-container>
+                    <level>
+                        <threshold>
+                            2<moon></moon>1<fire></fire>
+                        </threshold>
+                        <div class="description">Turn any face-down Fear Card face-up (It's earned/resolved normally,
+                            but players can see what's coming.</div>
+                    </level>
+                    <level>
+                        <threshold>
+                            3<moon></moon>2<fire></fire>
+                        </threshold>
+                        <div class="description">Destroy up to 2 <explorer></explorer>.
+                            1 <fear></fear> per <explorer></explorer> destroyed.</div>
+                    </level>
+                    <level>
+                        <threshold>
+                            3<moon></moon>2<fire></fire>
+                        </threshold>
+                        <div class="description">Destroy up to 2 <explorer></explorer>.
+                            1 <fear></fear> per <explorer></explorer> destroyed.</div>
+                    </level>
+                </description-container>
+            </innate-power>
+        </innate-powers>
+
+    </board>
+
+</body>
+
+</html>
