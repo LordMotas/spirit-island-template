@@ -160,15 +160,6 @@ discard-cards {
     height: 90px;
 }
 
-gain-2-water {
-    background-image: url('../images/board/gain_2_water.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    display: block;
-    height: 90px;
-}
-
 growth-energy {
     background-image: url('../images/board/AddEnergyBlank.png');
     background-repeat: no-repeat;
@@ -187,15 +178,6 @@ growth-energy value {
     margin-left: 25px;
 }
 
-growth-cell note {
-    padding-top: 10px;
-    display: inline-block;
-    font-family: 'Lato-SemiboldItalic';
-    font-size: 10pt;
-    font-weight: bold;
-    font-style: italic;
-}
-
 custom-presence-req {
     font-size: 20pt;
     font-weight: bold;
@@ -210,10 +192,10 @@ custom-presence {
     font-size: 20pt;
     font-weight: bold;
     display: block;
-    margin-top: -15px;
+    margin-top: 4px;
     width: auto;
     height: 110px;
-    margin-bottom: -4px;
+    margin-bottom: -22px;
 }
 
 custom-presence range-1, custom-presence range-2, custom-presence range-3, custom-presence ramge-4 {
@@ -301,18 +283,34 @@ mountain-sand {
     background-image: url('../images/board/mountainsand.png');
 }
 
+sand {
+    background-image: url('../images/board/sand.png');
+}
+
+mountain {
+    background-image: url('../images/board/mountain.png');
+}
+
+jungle {
+    background-image: url('../images/board/jungle.png');
+}
+
+wetland {
+    background-image: url('../images/board/wetland.png');
+}
+
 ocean {
     background-image: url('../images/board/ocean.png');
 }
 
-jungle-wetland, jungle-sand, sand-wetland, mountain-sand, mountain-wetland, mountain-jungle {
+sand, wetland, jungle, mountain, jungle-wetland, jungle-sand, sand-wetland, mountain-sand, mountain-wetland, mountain-jungle {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     display: block;
     height: 45px;
-    margin-top: 0px;
-    margin-bottom: -10px;
+    margin-top: 7px;
+    margin-bottom: -3px;
 }
 
 ocean {
@@ -550,8 +548,7 @@ move-range-1, move-range-2, move-range-3 {
 
 range-0, range-1, range-2, range-3, range-4 {
     height: 45px;
-    margin-top: 15px;
-    margin-bottom: 8px;
+    margin-top: 16px;
 }
 
 range-0 {
@@ -1000,10 +997,17 @@ presence-tracks {
     height: 350px;
 }
 
+player-spirit{
+    background-image: url('../images/board/player-spirit.png');
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
 player-spirit {
     width: 30px;
     height: 30px;
-    margin-left: 10px;
 }
 
 innate-powers {

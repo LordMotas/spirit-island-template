@@ -6,6 +6,14 @@ The fastest way to get started is to start from the example template in the fold
 
 The board template use a lot of custom HTML tags, here is a quick summary:
 
+General Images: Every image in a board can be called by simply using its name as a separate tag. Here is a list of what is available:
+- Elements (fire, water, earth, air, plant, animal, sun, moon)
+- Invaders (explorer, town, city)
+- Island symbols (blight, dahan, fear, disease, wilds, beast, strife, badlands)
+- Land symbols (sand, mountain, jungle, wetland, ocean, jungle-wetland, jungle-sand, sand-wetland, mountain-jungle, mountain-wetland, mountain-sand)
+- Targetting symbols (range-plus-one, range-0, range-1, range-2, range-3, range-4, player-spirit)
+
+
 - **board**: Represent the whole board.
   - spirit-name: The name of the Spirit.
   - img class="spirit-image": The main Spirit image.
@@ -24,13 +32,14 @@ The board template use a lot of custom HTML tags, here is a quick summary:
         - gain-power-card: Gain Power Card
         - growth-energy: Gain Energy
           - value: The amount of Energy to gain
+        - make-fast: One of your Powers may be Fast
         - custom-presence: The container to create a custom presence placement option
           - presence-no-range: Add a Presence to any Land (as seen on Finder)
           - ignore-range: You may ignore Range this turn (as seen on Finder)
           - presence: The Presence image (generally proceeded by a "+")
           - range-x: Where x is the range at which to place Presence (0, 1, 2, 3, or 4)
         - custom-presence-req: The container used **instead** of custom-presence when specific lands are involved
-          - options: option is one of the following: ocean, jungle-wetland, jungle-sand, sand-wetland, mountain-jungle, mountain-wetland, or mountain-sand 
+          - options: option is one of the following: sand, mountain, jungle, wetland,ocean, jungle-wetland, jungle-sand, sand-wetland, mountain-jungle, mountain-wetland, or mountain-sand 
           - Note: option is placed below the presence tag but before the range-x tag
         - element: Gain element where element is any of the following: fire, water, moon, animal, sun, earth, plant, air
         - gain-per: Gain energy per option*
@@ -77,6 +86,7 @@ The board template use a lot of custom HTML tags, here is a quick summary:
             - option: option consists of the following: range-0, range-1, range-2, range-3, or range-4
             - Note: You can put in a sacred site by using the sacred-site tag
           - innate-info-target: Defines the target land for the Innate Power
+            - Note: This may also be player-spirit 
       - description-container: The container for the description of the Innate Power
         - level: The container that holds each level of the Innate Power
           - threshold: The threshold portion of the Innate Power
