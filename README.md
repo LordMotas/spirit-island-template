@@ -5,7 +5,7 @@
 - [Adversary](_docs/adversary.md)
 - [Cards](_docs/card.md)
 - [Icons](_docs/icon.md)
-- [Board](_doc/board.md)
+- [Board](_docs/board.md)
 
 ### Fonts
 
