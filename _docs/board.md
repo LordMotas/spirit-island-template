@@ -1,0 +1,85 @@
+# Board
+
+The fastest way to get started is to start from the example template in the folder adversary/example.
+
+## Custom HTML Tag
+
+The board template use a lot of custom HTML tags, here is a quick summary:
+
+- **board**: Represent the whole board.
+  - spirit-name: The name of the Spirit.
+  - img class="spirit-image": The main Spirit image.
+  - img class="spirit-border": The image that sits underneath the Spirit name.
+  - special-rules-container: The container for the Special Rules
+    - special-rules-subtitle: The name of the Special Rule.
+    - special-rule: The rule itself.
+  - **growth**: The container for the Growth Options
+    - growth-title: Usually "Growth (PICK ONE)" (For now, new features coming soon)
+    - growth-table: The row for the growth options (current functionality only supports one row)
+      - growth-cell: The container for each Growth Option.
+        - reclaim-all: Reclaim All
+        - reclaim-one: Reclaim One
+        - discard-cards: Discard 2 Power Cards (as seen on Downpour)
+        - gain-card-play: +1 Card Play this turn
+        - gain-power-card: Gain Power Card
+        - growth-energy: Gain Energy
+          - value: The amount of Energy to gain
+        - custom-presence: The container to create a custom presence placement option
+          - presence-no-range: Add a Presence to any Land (as seen on Finder)
+          - ignore-range: You may ignore Range this turn (as seen on Finder)
+          - presence: The Presence image (generally proceeded by a "+")
+          - range-x: Where x is the range at which to place Presence (0, 1, 2, 3, or 4)
+        - custom-presence-req: The container used **instead** of custom-presence when specific lands are involved
+          - options: option is one of the following: ocean, jungle-wetland, jungle-sand, sand-wetland, mountain-jungle, mountain-wetland, or mountain-sand 
+          - Note: option is placed below the presence tag but before the range-x tag
+        - element: Gain element where element is any of the following: fire, water, moon, animal, sun, earth, plant, air
+        - gain-per: Gain energy per option*
+          - value: The amount of Energy gained per option 
+        - option: option is used just below the gain-per tag and is one of the following: (fire, water, earth, plant, air, sun, moon, animal, card-play)
+        - growth-text: The text written below each part of a Growth Option
+      - growth-border: The separation line between Growth sections
+  - **presence-tracks**: The container for the Presence Tracks
+    - energy-track-table: The row for the energy track (current functionality only supports one row)
+      - energy-track-initial: The first spot on the Energy Track
+        - value: The value of the initial Energy
+      - energy-track: The Energy circle on the track
+        - value: The value of the Energy
+        - subtext: The text underneath the image
+      - element-combination: Used when the track cell consists of two elements
+        - element-top: Top portion of element combination
+          - option: option consists of one of the following: fire, water, moon, animal, sun, earth, plant, air
+        - element-bottom: Bottom portion of element combination
+          - option: option consists of one of the following: fire, water, moon, animal, sun, earth, plant, air
+      - energy-track-ring: The ring without the Energy circle
+        - energy-top: Used when the track consists of both Energy and an element
+          - value: The amount of Energy gained
+        - element-bottom: Used when the track cell consists of two elements (bottom)
+          - option: option consists of one of the following: fire, water, moon, animal, sun, earth, plant, air
+      - subtext: The text written below the Energy cell (inside of energy-track and energy-track-initial)
+    - card-play-track-table: The row for the Card Play Track (current functionality only supports one row)
+      - card-play-initial: The first spot on the Card Play Track
+        - value: The value of the initial Card Plays
+      - card-play-track: The ring for the Card Play icon
+        - card-play-special: Used when the Card Play icon isn't used
+          - option: option consists of one of the following: fire, water, moon, animal, sun, earth, plant, air
+        - card-play: The Card Play icon
+        - subtext: The text written below the Card Play cell (inside of card-play-special and card-play-track)
+  - **innate-powers**: The container for the Innate Powers
+    - innate-power: The container for a single Innate Power
+      - class="fast": The Innate Power is Fast
+      - class="slow": The Innate Power is Slow
+      - innate-power-title: The title of the Innate Power
+      - info-container: The container for the information
+        - info-title: The box that provides the header for the speed, range, and target
+        - info: The specific information for the above info-title
+          - innate-info-speed: Taken care of by the class attribute of innate-power
+          - innate-info-range: Defines the range of the Innate Power
+            - option: option consists of the following: range-0, range-1, range-2, range-3, or range-4
+            - Note: You can put in a sacred site by using the sacred-site tag
+          - innate-info-target: Defines the target land for the Innate Power
+      - description-container: The container for the description of the Innate Power
+        - level: The container that holds each level of the Innate Power
+          - threshold: The threshold portion of the Innate Power
+            - Note: This is usually in the format of: x<element>Y<element> etc.
+          - div class="description": What the Innate Power does
+            - div id="single-line": Used when the description is only a single line (it fixes spacing issues)

@@ -321,8 +321,8 @@ ocean {
     background-position: center;
     display: block;
     height: 65px;
-    margin-top: -6px;
-    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: -17px;
 }
 
 ignore-range {
