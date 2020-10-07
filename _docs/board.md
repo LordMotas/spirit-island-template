@@ -41,6 +41,8 @@ General Images: Every image in a board can be called by simply using its name as
         - custom-presence-req: The container used **instead** of custom-presence when specific lands are involved
           - options: option is one of the following: sand, mountain, jungle, wetland,ocean, jungle-wetland, jungle-sand, sand-wetland, mountain-jungle, mountain-wetland, or mountain-sand 
           - Note: option is placed below the presence tag but before the range-x tag
+        - custom-presence-special: The container used **instead** of custom-presence when using a move-range-x tag
+          - move-range-x: Move a Presence
         - element: Gain element where element is any of the following: fire, water, moon, animal, sun, earth, plant, air
         - gain-per: Gain energy per option*
           - value: The amount of Energy gained per option 
