@@ -542,7 +542,7 @@ move-range-3 {
 
 move-range-1, move-range-2, move-range-3 {
     height: 55px;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-bottom: -2px;
 }
 
@@ -1295,7 +1295,7 @@ presence {
     width: 35px;
     height: 35px;
     margin-bottom: -13px;
-    margin-left: 0px;
+    margin-left: 6px;
     margin-right: 0px;
 }
 
