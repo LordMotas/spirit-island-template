@@ -30,163 +30,21 @@
             </special-rule>
         </special-rules-container>
 
-        <growth>
-            <growth-title>Growth (PICK ONE)</growth-title>
-            <growth-table>
-                <growth-cell>
-                    <reclaim-all></reclaim-all>
-                    <growth-text>Reclaim Cards</growth-text>
-                </growth-cell>
-                <growth-cell>
-                    <gain-power-card></gain-power-card>
-                    <growth-text>Gain Power Card</growth-text>
-                </growth-cell>
-                <growth-cell>
-                    <growth-energy>
-                        <value>3</value>
-                    </growth-energy>
-                    <growth-text>Gain Energy</growth-text>
-                </growth-cell>
-                <growth-border></growth-border>
-                <growth-cell>
-                    <custom-presence-req>
-                        +<presence></presence>
-                        <ocean></ocean>
-                        <range-2></range-2>
-                    </custom-presence-req>
-                    <growth-text>Add a Presence</growth-text>
-                </growth-cell>
-                <growth-cell>
-                    <fire></fire>
-                    <growth-text>Gain Fire</growth-text>
-                </growth-cell>
-                <growth-border></growth-border>
-                <growth-cell>
-                    <custom-presence-req>
-                        +<presence></presence>
-                        <jungle></jungle>
-                        <range-2></range-2>
-                    </custom-presence-req>
-                    <growth-text>Add a Presence</growth-text>
-                </growth-cell>
-                <growth-cell>
-                    <custom-presence>
-                        +<presence></presence>
-                        <range-4></range-4>
-                    </custom-presence>
-                    <growth-text>Add a Presence</growth-text>
-                </growth-cell>
-                <growth-cell>
-                    <gain-per>
-                        <value>1</value>
-                    </gain-per>
-                    <card-play></card-play>
-                    <growth-text>Gain 1 Energy per Animal</growth-text>
-                </growth-cell>
-                <growth-cell>
-                    <growth-energy>
-                        <value>2</value>
-                    </growth-energy>
-                    <growth-text>Gain Energy</growth-text>
-                </growth-cell>
-            </growth-table>
+        <!--TODO:Things to add/test
+        Gain 2 of an Element-->
+
+        <growth title="Growth (PICK ONE)">
+            <growth-group class="reclaim-one;gain-power-card;gain-energy(3)"></growth-group>
+            <growth-group class="add-presence(2,ocean);gain-element(fire)"></growth-group>
+            <growth-group class="move-presence(2);presence-no-range;add-presence(3,mountain-jungle)"></growth-group>
         </growth>
 
-        <presence-tracks>
-            <energy-track-table>
-                <energy-track-initial>
-                    <value>1</value>
-                </energy-track-initial>
-                <energy-track>
-                    <value>2</value>
-                    <subtext>2</subtext>
-                </energy-track>
-                <energy-track>
-                    <earth></earth>
-                    <subtext>Earth</subtext>
-                </energy-track>
-                <energy-track-ring>
-                    <energy-top>
-                        <value>3</value>
-                    </energy-top>
-                    <element-bottom>
-                        <fire></fire>
-                    </element-bottom>
-                    <subtext>3</subtext>
-                </energy-track-ring>
-                <energy-track>
-                    <element-combination>
-                        <element-top>
-                            <water></water>
-                        </element-top>
-                        <element-bottom>
-                            <earth></earth>
-                        </element-bottom>
-                    </element-combination>
-                    <subtext>Water, Earth</subtext>
-                </energy-track>
-                <energy-track>
-                    <element-combination>
-                        <element-top>
-                            <fire></fire>
-                        </element-top>
-                        <element-bottom>
-                            <plant></plant>
-                        </element-bottom>
-                    </element-combination>
-                    <subtext>Fire, Plant</subtext>
-                </energy-track>
-            </energy-track-table>
+        <!--TODO:Things to add/test
+        Push X from the land-->
 
-            <card-play-track-table>
-                <card-play-track-initial>
-                    <card-play>
-                        <value>1</value>
-                    </card-play>
-                </card-play-track-initial>
-                <card-play-track>
-                    <card-play-special>
-                        <fire></fire>
-                    </card-play-special>
-                    <subtext>Fire</subtext>
-                </card-play-track>
-                <card-play-track>
-                    <card-play-special>
-                        <earth></earth>
-                    </card-play-special>
-                    <subtext>Earth</subtext>
-                </card-play-track>
-                <card-play-track>
-                    <card-play>
-                        <value>2</value>
-                    </card-play>
-                    <subtext>2</subtext>
-                </card-play-track>
-                <card-play-track>
-                    <card-play-special>
-                        <air></air>
-                    </card-play-special>
-                    <subtext>Air</subtext>
-                </card-play-track>
-                <card-play-track>
-                    <card-play>
-                        <value>3</value>
-                    </card-play>
-                    <subtext>3</subtext>
-                </card-play-track>
-                <card-play-track>
-                    <card-play-special>
-                        <fire></fire>
-                    </card-play-special>
-                    <subtext>Fire</subtext>
-                </card-play-track>
-                <card-play-track>
-                    <card-play>
-                        <value>4</value>
-                    </card-play>
-                    <subtext>4</subtext>
-                </card-play-track>
-            </card-play-track-table>
+        <presence-tracks>
+            <energy-track values="1,2,earth,3+fire,water+earth,fire+plant"></energy-track>
+            <card-play-track values="1,fire,2+fire,3,move-presence(2),4,5+reclaim-one,fire+reclaim-one"></card-play-track>
         </presence-tracks>
 
         <innate-powers>

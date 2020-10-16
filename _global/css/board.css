@@ -63,10 +63,10 @@ spirit-name {
 
 .spirit-border {
     position: absolute;
-    left: 17.25px;
+    left: 17.9px;
     top: 712.55px;
     height: 75.6px;
-    width: 666px;
+    width: 665px;
     z-index: 1;
 }
 
@@ -139,6 +139,7 @@ growth-table {
     text-align: center;
     margin-top: 15px;
     margin-left: -28px;
+    justify-content: space-around;
 }
 
 growth-border {
@@ -196,6 +197,16 @@ custom-presence {
     width: auto;
     height: 110px;
     margin-bottom: -22px;
+}
+
+custom-presence-no-range {
+    font-size: 20pt;
+    font-weight: bold;
+    display: block;
+    width: auto;
+    height: 110px;
+    margin-bottom: -74px;
+    margin-top: 55px;
 }
 
 custom-presence range-1, custom-presence range-2, custom-presence range-3, custom-presence ramge-4 {
@@ -303,6 +314,11 @@ ocean {
     background-image: url('../images/board/ocean.png');
 }
 
+none{
+    display: block;
+    height: 3px;
+}
+
 sand, wetland, jungle, mountain, jungle-wetland, jungle-sand, sand-wetland, mountain-sand, mountain-wetland, mountain-jungle {
     background-repeat: no-repeat;
     background-size: contain;
@@ -310,7 +326,7 @@ sand, wetland, jungle, mountain, jungle-wetland, jungle-sand, sand-wetland, moun
     display: block;
     height: 45px;
     margin-top: 7px;
-    margin-bottom: -3px;
+    margin-bottom: -5px;
 }
 
 ocean {
@@ -318,9 +334,9 @@ ocean {
     background-size: contain;
     background-position: center;
     display: block;
-    height: 65px;
+    height: 60px;
     margin-top: 0px;
-    margin-bottom: -17px;
+    margin-bottom: -12px;
 }
 
 ignore-range {
@@ -543,12 +559,12 @@ move-range-3 {
 move-range-1, move-range-2, move-range-3 {
     height: 55px;
     margin-top: 10px;
-    margin-bottom: -2px;
+    margin-bottom: 0px;
 }
 
 range-0, range-1, range-2, range-3, range-4 {
     height: 45px;
-    margin-top: 16px;
+    margin-top: 11px;
 }
 
 range-0 {
@@ -600,7 +616,9 @@ gain-per {
     display: block;
     z-index: 1;
     position: relative;
-    margin-left: -30px;
+    margin-left: -57px;
+    margin-bottom: 45px;
+    margin-top: -10px;
 }
 
 gain-per value {
@@ -662,13 +680,22 @@ gather {
     margin-top: -34px;
 }
 
+growth-cell gain fire, growth-cell gain any, growth-cell gain water, growth-cell gain air, growth-cell gain earth, growth-cell gain animal, growth-cell gain plant, growth-cell gain sun, growth-cell gain moon {
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    height: 60px;
+    margin-left: 0px;
+    margin-top: 21px;
+}
+
 growth-cell fire, growth-cell any, growth-cell water, growth-cell air, growth-cell earth, growth-cell animal, growth-cell plant, growth-cell sun, growth-cell moon {
     background-repeat: no-repeat;
     background-size: contain;
     display: block;
     height: 60px;
     margin-left: 0px;
-    margin-top: 20px;
+    margin-top: -73px;
     margin-bottom: 10px;
 }
 
@@ -849,7 +876,13 @@ card-play-special reclaim-one {
     margin-bottom: -5px;
 }
 
-energy-track any, energy-track fire, energy-track water, energy-track moon, energy-track air, energy-track animal, energy-track plant, energy-track sun, energy-track earth, card-play-special any, card-play-special fire, card-play-special water, card-play-special moon, card-play-special air, card-play-special animal, card-play-special plant, card-play-special sun, card-play-special earth, energy-top, element-top {
+element-bottom reclaim-one{
+    margin-top: -55px;
+    margin-left: 28px;
+    margin-bottom: -14px;
+}
+
+energy-track any, energy-track fire, energy-track water, energy-track moon, energy-track air, energy-track animal, energy-track plant, energy-track sun, energy-track earth, card-play-special any, card-play-special fire, card-play-special water, card-play-special moon, card-play-special air, card-play-special animal, card-play-special plant, card-play-special sun, card-play-special earth, energy-top, card-play-top, element-top {
     background-repeat: no-repeat;
     background-size: contain;
     display: block;
@@ -866,6 +899,17 @@ element-top air, element-top fire, element-top any, element-top water, element-t
     display: block;
 }
 
+card-play-track element-combination element-top air, card-play-track element-combination element-top fire, card-play-track element-combination element-top any, 
+card-play-track element-combination element-top water, card-play-track element-combination element-top animal, card-play-track element-combination element-top earth, 
+card-play-track element-combination element-top plant, card-play-track element-combination element-top sun, card-play-track element-combination element-top moon {
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 65px;
+    width: 65px;
+    display: block;
+    margin-left: -9px;
+}
+
 element-bottom air, element-bottom fire, element-bottom any, element-bottom water, element-bottom animal, element-bottom earth, element-bottom plant, element-bottom sun, element-bottom moon {
     background-repeat: no-repeat;
     background-size: contain;
@@ -875,6 +919,20 @@ element-bottom air, element-bottom fire, element-bottom any, element-bottom wate
     margin-left: 50px;
     margin-top: -35px;
     margin-bottom: -24px;
+}
+
+card-play-track element-bottom air, card-play-track element-bottom water, card-play-track element-bottom sun,
+card-play-track element-bottom fire, card-play-track element-bottom earth, card-play-track element-bottom animal, 
+card-play-track element-bottom moon, card-play-track element-bottom plant, card-play-track element-bottom any
+ {
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 65px;
+    width: 65px;
+    display: block;
+    margin-left: 50px;
+    margin-top: -30px;
+    margin-bottom: -15px;
 }
 
 card-play-special any, card-play-special fire, card-play-special water, card-play-special moon, card-play-special air, card-play-special animal, card-play-special plant, card-play-special sun, card-play-special earth {
@@ -920,6 +978,14 @@ card-play value {
     margin-top: 7px;
 }
 
+card-play-top value {
+    font-family: 'Gobold Extra2';
+    font-size: 31pt;
+    display: inline-block;
+    margin-left: 14px;
+    margin-top: 10px;
+}
+
 energy-track value {
     font-family: 'Gobold Extra2';
     font-size: 36pt;
@@ -933,14 +999,36 @@ energy-top, energy-bottom {
     height: 90px;
 }
 
+card-play-top{
+    background-image: url('../images/board/CardPlayBlank.png');
+    height: 90px;
+}
+
 energy-top {
     margin-left: 0px;
     margin-top: 0px;
 }
 
+card-play-top {
+    margin-left: 12px;
+    margin-top: 11px;
+    height: 72px;
+}
+
+card-play-track element-combination{
+    margin-top: 46px;
+    margin-bottom: 2px;
+}
+
 element-combination {
     display: block;
     margin-bottom: 15px;
+}
+
+card-play-track element-combination element-top{
+    margin-left: 14px;
+    margin-top: -36px;
+    height: 72px;
 }
 
 element-top {
