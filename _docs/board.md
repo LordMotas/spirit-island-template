@@ -22,59 +22,37 @@ General Images: Every image in a board can be called by simply using its name as
     - special-rules-subtitle: The name of the Special Rule.
     - special-rule: The rule itself.
   - **growth**: The container for the Growth Options
-    - growth-title: Usually "Growth (PICK ONE)" (For now, new features coming soon)
-    - growth-table: The row for the growth options (current functionality only supports one row)
-      - growth-cell: The container for each Growth Option.
-        - reclaim-all: Reclaim All
-        - reclaim-one: Reclaim One
-        - discard-cards: Discard 2 Power Cards (as seen on Downpour)
-        - gain-card-play: +1 Card Play this turn
-        - gain-power-card: Gain Power Card
-        - growth-energy: Gain Energy
-          - value: The amount of Energy to gain
-        - make-fast: One of your Powers may be Fast
-        - custom-presence: The container to create a custom presence placement option
-          - presence-no-range: Add a Presence to any Land (as seen on Finder)
-          - ignore-range: You may ignore Range this turn (as seen on Finder)
-          - presence: The Presence image (generally proceeded by a "+")
-          - range-x: Where x is the range at which to place Presence (0, 1, 2, 3, or 4)
-        - custom-presence-req: The container used **instead** of custom-presence when specific lands are involved
-          - options: option is one of the following: sand, mountain, jungle, wetland,ocean, jungle-wetland, jungle-sand, sand-wetland, mountain-jungle, mountain-wetland, or mountain-sand 
-          - Note: option is placed below the presence tag but before the range-x tag
-        - custom-presence-special: The container used **instead** of custom-presence when using a move-range-x tag
-          - move-range-x: Move a Presence
-        - element: Gain element where element is any of the following: fire, water, moon, animal, sun, earth, plant, air
-        - gain-per: Gain energy per option*
-          - value: The amount of Energy gained per option 
-        - option: option is used just below the gain-per tag and is one of the following: (fire, water, earth, plant, air, sun, moon, animal, card-play)
-        - growth-text: The text written below each part of a Growth Option
-      - growth-border: The separation line between Growth sections
+    - growth title: Usually "Growth (PICK ONE)" (For now, new features coming soon)
+    - growth-group: Each individual section in the Growth section
+      - growth-group class: The actual values that will be used to create the Growth section.
+        - Supported Options:
+          - reclaim-all: Reclaim All
+          - reclaim-one: Reclaim One
+          - discard-cards: Discard 2 Power Cards (as seen on Downpour)
+          - gain-card-play: +1 Card Play this turn
+          - gain-power-card: Gain Power Card
+          - gain-energy(X): Gain X Energy
+          - make-fast: One of your Powers may be Fast
+          - add-presence(X): Add a Presence up to X Range
+          - add-presence(X,Y): Add a Presence limited to Y Land type up to X Range
+          - move-presence(X): Move a Presence up to X Range
+          - presence-no-range: Add a presence anywhere (as seen on Finder)
+          - ignore-range: Ignore Range this turn (as seen on Finder)
+          - gain-element(X): Gain X Element (currently limited to only one)
   - **presence-tracks**: The container for the Presence Tracks
-    - energy-track-table: The row for the energy track (current functionality only supports one row)
-      - energy-track-initial: The first spot on the Energy Track
-        - value: The value of the initial Energy
-      - energy-track: The Energy circle on the track
-        - value: The value of the Energy
-        - subtext: The text underneath the image
-      - element-combination: Used when the track cell consists of two elements
-        - element-top: Top portion of element combination
-          - option: option consists of one of the following: fire, water, moon, animal, sun, earth, plant, air
-        - element-bottom: Bottom portion of element combination
-          - option: option consists of one of the following: fire, water, moon, animal, sun, earth, plant, air
-      - energy-track-ring: The ring without the Energy circle
-        - energy-top: Used when the track consists of both Energy and an element
-          - value: The amount of Energy gained
-        - element-bottom: Used when the track cell consists of two elements (bottom)
-          - option: option consists of one of the following: fire, water, moon, animal, sun, earth, plant, air
-      - subtext: The text written below the Energy cell (inside of energy-track and energy-track-initial)
-    - card-play-track-table: The row for the Card Play Track (current functionality only supports one row)
-      - card-play-initial: The first spot on the Card Play Track
-        - value: The value of the initial Card Plays
-      - card-play-track: The ring for the Card Play icon
-        - card-play-special: Used when the Card Play icon isn't used
-          - option: option consists of one of the following: fire, water, moon, animal, sun, earth, plant, air
-        - card-play: The Card Play icon
-        - subtext: The text written below the Card Play cell (inside of card-play-special and card-play-track)
+    - **energy-track**: The entire Energy Track (current functionality only supports one row)
+      - energy-track values: The actual values that will be used to create the Energy Track
+        - Supported Options:
+          - Integer 1,2,3,4,5,6,7 etc.
+          - Elements earth, fire, air, moon, water, plant, animal, sun, or any
+          - Combinations of Elements/Energy: 3+earth, 2+fire, earth+any, water+plant
+    - **card-play-track**: The entire Card Play Track (current functionality only supports one row)
+      - card-play-track values: The actual values that will be used to create the Card Play Track
+        - Supported Options:
+          - Integer 1,2,3,4,5,6,7 etc.
+          - Elements earth, fire, air, moon, water, plant, animal, sun, or any
+          - Combinations of Elements/Energy: (3+earth, 2+fire, earth+any, water+plant
+          - Reclaim One: reclaim-one, 3+reclaim-one, earth+reclaim-one
   - **innate-powers**: The container for the Innate Powers
     - innate-power: The container for a single Innate Power
       - class="fast": The Innate Power is Fast
