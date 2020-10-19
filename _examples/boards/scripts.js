@@ -4,6 +4,8 @@ window.onload = function startMain(){
     var newEnergyTrack = parseEnergyTrackTags();
     var newCardPlayTrack = parseCardPlayTrackTags();
     setNewEnergyCardPlayTracks(newEnergyTrack, newCardPlayTrack);
+    var html = document.querySelectorAll('board')[0].innerHTML;
+    document.querySelectorAll('board')[0].innerHTML = replaceIcon(html);
     dynamicCellWidth();
 }
 
@@ -27,7 +29,7 @@ function parseGrowthTags(){
         //childElement is the thing that should be replaced when all is said and done
         //console.log(childElement);
         
-        growthClass = childElement.className;
+        growthClass = childElement.getAttribute("values");
         //console.log(growthClass);
 
         var classPieces = growthClass.split(';');
@@ -41,22 +43,22 @@ function parseGrowthTags(){
 
             switch(growthItem) {
                 case 'reclaim-all':
-                    newGrowthCellHTML += "<growth-cell><reclaim-all></reclaim-all><growth-text>Reclaim Cards</growth-text></growth-cell>";
+                    newGrowthCellHTML += "<growth-cell>{reclaim-all}<growth-text>Reclaim Cards</growth-text></growth-cell>";
                     break;
                 case 'reclaim-one':
-                    newGrowthCellHTML += "<growth-cell><reclaim-one></reclaim-one><growth-text>Reclaim One</growth-text></growth-cell>";
+                    newGrowthCellHTML += "<growth-cell>{reclaim-one}<growth-text>Reclaim One</growth-text></growth-cell>";
                     break;
                 case 'gain-power-card':
-                    newGrowthCellHTML += "<growth-cell><gain-power-card></gain-power-card><growth-text>Gain Power Card</growth-text></growth-cell>";
+                    newGrowthCellHTML += "<growth-cell>{gain-power-card}<growth-text>Gain Power Card</growth-text></growth-cell>";
                     break;
                 case 'discard-cards':
-                    newGrowthCellHTML += "<growth-cell><discard-cards></discard-cards><growth-text>Discard 2 Power Cards</growth-text></growth-cell>";
+                    newGrowthCellHTML += "<growth-cell>{discard-cards}<growth-text>Discard 2 Power Cards</growth-text></growth-cell>";
                     break;
                 case 'gain-card-play':
-                    newGrowthCellHTML += "<growth-cell><gain-card-play></gain-card-play><growth-text>Gain a Card Play</growth-text></growth-cell>";
+                    newGrowthCellHTML += "<growth-cell>{gain-card-play}<growth-text>Gain a Card Play</growth-text></growth-cell>";
                     break;
                 case 'make-fast':
-                    newGrowthCellHTML += "<growth-cell><make-fast></make-fast><growth-text>One of your Powers may be Fast</growth-text></growth-cell>";
+                    newGrowthCellHTML += "<growth-cell>{make-fast}<growth-text>One of your Powers may be Fast</growth-text></growth-cell>";
                     break;
                 case 'gain-energy':
                     var matches = regExp.exec(classPieces[j]);
@@ -86,20 +88,20 @@ function parseGrowthTags(){
                         presenceReq = presenceOptions[1];
                     }
 
-                    newGrowthCellHTML += "<growth-cell>"+presenceReqOpen+"+<presence></presence><"+presenceReq+"></"+presenceReq+"><range-"+presenceRange+"></range-"+presenceRange+">"+presenceReqClose+"<growth-text>Add a Presence</growth-text></growth-cell>";
+                    newGrowthCellHTML += "<growth-cell>"+presenceReqOpen+"+{presence}{"+presenceReq+"}{range-"+presenceRange+"}"+presenceReqClose+"<growth-text>Add a Presence</growth-text></growth-cell>";
                     break;
                 case 'presence-no-range':
-                    newGrowthCellHTML += "<growth-cell><custom-presence-no-range>+<presence></presence></custom-presence-no-range><growth-text>Add a Presence to any Land</growth-text></growth-cell>";
+                    newGrowthCellHTML += "<growth-cell><custom-presence-no-range>+{presence}</custom-presence-no-range><growth-text>Add a Presence to any Land</growth-text></growth-cell>";
                     break;
                 case 'ignore-range':
-                    newGrowthCellHTML += "<growth-cell><custom-presence><ignore-range></ignore-range></custom-presence><growth-text>You may ignore Range this turn</growth-text></growth-cell>";
+                    newGrowthCellHTML += "<growth-cell><custom-presence>{ignore-range}</custom-presence><growth-text>You may ignore Range this turn</growth-text></growth-cell>";
                     break;
                 case 'move-presence':
                     //Additional things can be done here based on inputs
                     var matches = regExp.exec(classPieces[j]);
 
                     var moveRange = matches[1];
-                    newGrowthCellHTML += "<growth-cell><custom-presence-special><presence></presence><move-range-"+moveRange+"></move-range-"+moveRange+"><growth-text>Move a Presence</growth-text></growth-cell>";
+                    newGrowthCellHTML += "<growth-cell><custom-presence-special>{presence}{move-range-"+moveRange+"}<growth-text>Move a Presence</growth-text></growth-cell>";
 
                     break;
                 case 'gain-element':
@@ -110,14 +112,14 @@ function parseGrowthTags(){
 
                     //TODO: Add in the ability to gain more than one element
 
-                    newGrowthCellHTML += "<growth-cell><gain><"+gainedElement+"></"+gainedElement+"></gain><growth-text>Gain "+gainedElement.charAt(0).toUpperCase() + gainedElement.slice(1)+"</growth-text></growth-cell>";
+                    newGrowthCellHTML += "<growth-cell><gain>{"+gainedElement+"}</gain><growth-text>Gain "+gainedElement.charAt(0).toUpperCase() + gainedElement.slice(1)+"</growth-text></growth-cell>";
 
                     break;
                 default:
                     console.log("");
             }
         }
-        if(j <= growthHTML[0].children.length)
+        if(i != growthHTML[0].children.length - 1)
             newGrowthCellHTML += "<growth-border></growth-border>";
     }
     fullHTML += growthTitle+newGrowthTableTagOpen+newGrowthCellHTML+newGrowthTableTagClose
@@ -152,17 +154,17 @@ function parseEnergyTrackTags(){
 
             if(splitOptions.length == 1){
                 //It's just an element
-                energyHTML += "<energy-track><"+splitOptions[0]+"></"+splitOptions[0]+"><subtext>"+splitOptions[0].charAt(0).toUpperCase() + splitOptions[0].slice(1)+"</subtext></energy-track>";
+                energyHTML += "<energy-track><icon class='"+splitOptions[0]+"'></icon><subtext>"+splitOptions[0].charAt(0).toUpperCase() + splitOptions[0].slice(1)+"</subtext></energy-track>";
             } else {
                 //It's a mix of things
                 console.log(typeof(splitOptions[0]));
                 if(!isNaN(splitOptions[0])){
                     //It's a mix of energy and element
                     console.log("Energy and element");
-                    energyHTML += "<energy-track-ring><energy-top><value>"+splitOptions[0]+"</value></energy-top><element-bottom><"+splitOptions[1]+"></"+splitOptions[1]+"></element-bottom><subtext>"+splitOptions[0]+", "+splitOptions[1].charAt(0).toUpperCase() + splitOptions[1].slice(1)+"</subtext></energy-track-ring>";
+                    energyHTML += "<energy-track-ring><energy-top><value>"+splitOptions[0]+"</value></energy-top><element-bottom><icon class='"+splitOptions[1]+"'></icon></element-bottom><subtext>"+splitOptions[0]+", "+splitOptions[1].charAt(0).toUpperCase() + splitOptions[1].slice(1)+"</subtext></energy-track-ring>";
                 } else {
                     //It's a mix of elements
-                    energyHTML += "<energy-track><element-combination><element-top><"+splitOptions[0]+"></"+splitOptions[0]+"></element-top><element-bottom><"+splitOptions[1]+"></"+splitOptions[1]+"></element-bottom></element-combination><subtext>"+splitOptions[0].charAt(0).toUpperCase() + splitOptions[0].slice(1)+", "+splitOptions[1].charAt(0).toUpperCase() + splitOptions[1].slice(1)+"</subtext></energy-track>";
+                    energyHTML += "<energy-track><element-combination><element-top><icon class='"+splitOptions[0]+"'></icon></element-top><element-bottom><icon class='"+splitOptions[1]+"'></icon></element-bottom></element-combination><subtext>"+splitOptions[0].charAt(0).toUpperCase() + splitOptions[0].slice(1)+", "+splitOptions[1].charAt(0).toUpperCase() + splitOptions[1].slice(1)+"</subtext></energy-track>";
                 }
             }
         }
@@ -209,10 +211,10 @@ function parseCardPlayTrackTags(){
                     case 'move-presence':
                         var matches = regExp.exec(splitOptions[0]);
                         var moveRange = matches[1];
-                        cardPlayHTML += "<card-play-track><card-play-special><"+cardPlayOption+"-"+moveRange+"></"+cardPlayOption+"-"+moveRange+"></card-play-special><subtext>Move a Presence "+moveRange+"</subtext></card-play-track>";
+                        cardPlayHTML += "<card-play-track><card-play-special>{"+cardPlayOption+"-"+moveRange+"}</card-play-special><subtext>Move a Presence "+moveRange+"</subtext></card-play-track>";
                         break;
                     default:
-                        cardPlayHTML += "<card-play-track><card-play-special><"+splitOptions[0]+"></"+splitOptions[0]+"></card-play-special><subtext>"+splitOptions[0].charAt(0).toUpperCase() + splitOptions[0].slice(1)+"</subtext></card-play-track>";
+                        cardPlayHTML += "<card-play-track><card-play-special><icon class='"+splitOptions[0]+"'></icon></card-play-special><subtext>"+splitOptions[0].charAt(0).toUpperCase() + splitOptions[0].slice(1)+"</subtext></card-play-track>";
                         break;
                 }
             } else {
@@ -224,14 +226,14 @@ function parseCardPlayTrackTags(){
                     if(splitOptions[1] == 'reclaim-one'){
                         subText = "Reclaim One";
                     }
-                    cardPlayHTML += "<card-play-track><card-play-top><value>"+splitOptions[0]+"</value></card-play-top><element-bottom><"+splitOptions[1]+"></"+splitOptions[1]+"></element-bottom><subtext>"+splitOptions[0]+", "+subText+"</subtext></card-play-track>";
+                    cardPlayHTML += "<card-play-track><card-play-top><value>"+splitOptions[0]+"</value></card-play-top><element-bottom><icon class='"+splitOptions[1]+"'></icon></element-bottom><subtext>"+splitOptions[0]+", "+subText+"</subtext></card-play-track>";
                 } else {
                     //It's a mix of elements and potentially something else
                     var subText = splitOptions[1].charAt(0).toUpperCase() + splitOptions[1].slice(1);
                     if(splitOptions[1] == 'reclaim-one'){
                         subText = "Reclaim One";
                     }
-                    cardPlayHTML += "<card-play-track><element-combination><element-top><"+splitOptions[0]+"></"+splitOptions[0]+"></element-top><element-bottom><"+splitOptions[1]+"></"+splitOptions[1]+"></element-bottom></element-combination><subtext>"+splitOptions[0].charAt(0).toUpperCase() + splitOptions[0].slice(1)+", "+subText+"</subtext></card-play-track>";
+                    cardPlayHTML += "<card-play-track><element-combination><element-top><icon class='"+splitOptions[0]+"'></icon></element-top><element-bottom><icon class='"+splitOptions[1]+"'></icon></element-bottom></element-combination><subtext>"+splitOptions[0].charAt(0).toUpperCase() + splitOptions[0].slice(1)+", "+subText+"</subtext></card-play-track>";
                 }
             }
         }
@@ -281,39 +283,39 @@ function dynamicCellWidth() {
     ICONWIDTH = 60;
 
     for (i = 0; i < thresholdsCount; i++){
-        fire = thresholds[i].getElementsByTagName("fire");
-        plant = thresholds[i].getElementsByTagName("plant");
-        air = thresholds[i].getElementsByTagName("air");
-        moon = thresholds[i].getElementsByTagName("moon");
-        sun = thresholds[i].getElementsByTagName("sun");
-        water = thresholds[i].getElementsByTagName("water");
-        animal = thresholds[i].getElementsByTagName("animal");
-        earth = thresholds[i].getElementsByTagName("earth");
+        icon = thresholds[i].getElementsByTagName("icon");
 
-        fireCount = fire.length;
-        plantCount = plant.length;
-        airCount = air.length;
-        moonCount = moon.length;
-        sunCount = sun.length;
-        waterCount = water.length;
-        animalCount = animal.length;
-        earthCount = earth.length;
+        iconCount = icon.length;
 
-        console.log(fireCount);
+        //console.log(fireCount);
         dynamicThresholdWidth = 
-            ((fireCount * ICONWIDTH) + (fireCount * 12) + 
-            (plantCount * ICONWIDTH) + (plantCount * 12) + 
-            (airCount * ICONWIDTH) + (airCount * 12) + 
-            (moonCount * ICONWIDTH) + (moonCount * 12) + 
-            (sunCount * ICONWIDTH) + (sunCount * 12) + 
-            (waterCount * ICONWIDTH) + (waterCount * 12) + 
-            (animalCount * ICONWIDTH) + (animalCount * 12) + 
-            (earthCount * ICONWIDTH) + (earthCount * 12));
-        console.log(dynamicThresholdWidth);
+            (iconCount * ICONWIDTH) + (iconCount * 12);
+        //console.log(dynamicThresholdWidth);
         formattedWidth = dynamicThresholdWidth + "px";
-        console.log(formattedWidth);
+        //console.log(formattedWidth);
         thresholds[i].style.width = formattedWidth;
-        console.log("End row");
+        //console.log("End row");
     }
 
+}
+
+function replaceIcon(html)
+{
+  var result = html;
+
+  var regEx = new RegExp('(\\{[^\\}]*\\})', "ig");
+  var matchs = result.match(regEx);
+  for(var match of (matchs || []))
+  {
+    var iconName = match.replace('{', '').replace('}', '');
+    var iconHtml = `<icon class="${iconName}"></icon>`;
+    result = result.replace(new RegExp(match, "ig"), iconHtml);
+  }
+
+  return result;
+}
+
+function quickInnatePowers(){
+    var growthHTML = document.getElementsByTagName("quick-innate-power");
+    
 }

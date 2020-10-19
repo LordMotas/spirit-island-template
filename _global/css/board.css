@@ -115,7 +115,9 @@ special-rule {
     line-height: 29px;
 }
 
-special-rule fire {
+special-rule icon.fire, special-rule icon.earth, special-rule icon.plant,
+special-rule icon.animal, special-rule icon.air, special-rule icon.water,
+special-rule icon.any, special-rule icon.moon, special-rule icon.sun{
     height: 25px;
     width: 25px;
 }
@@ -152,13 +154,19 @@ growth-border {
     margin-top: -30px;
 }
 
-discard-cards {
+icon.discard-cards {
     background-image: url('../images/board/discard_power_cards.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     display: block;
     height: 90px;
+    width:90px;
+}
+
+growth-cell icon.discard-cards{
+    margin-left: 20px;
+    margin-bottom: 7px;
 }
 
 growth-energy {
@@ -209,7 +217,7 @@ custom-presence-no-range {
     margin-top: 55px;
 }
 
-custom-presence range-1, custom-presence range-2, custom-presence range-3, custom-presence ramge-4 {
+custom-presence icon.range-0, custom-presence icon.range-1, custom-presence icon.range-2, custom-presence icon.range-3, custom-presence icon.range-4 {
     margin-bottom: 10px;
 }
 
@@ -217,22 +225,34 @@ presence-req {
     display: block;
 }
 
-make-fast {
+icon.make-fast {
     background-image: url('../images/board/fast_power.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     display: block;
     height: 90px;
+    width:90px;
 }
 
-reclaim-all {
+growth-cell icon.make-fast{
+    margin-left: 20px;
+    margin-bottom: 7px;
+}
+
+icon.reclaim-all {
     background-image: url('../images/board/Reclaimall.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     display: block;
     height: 90px;
+    width:90px;
+}
+
+growth-cell icon.reclaim-all{
+    margin-left: 20px;
+    margin-bottom: 7px;
 }
 
 growth-text {
@@ -243,74 +263,92 @@ growth-text {
     width: 140px;
 }
 
-gain-power-card {
+icon.gain-power-card {
     background-image: url('../images/board/Gaincardicon.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     display: block;
     height: 90px;
+    width:90px;
 }
 
-gain-card-play {
+growth-cell icon.gain-power-card{
+    margin-left: 20px;
+    margin-bottom: 7px;
+}
+
+icon.gain-card-play {
     background-image: url('../images/board/Cardplay_Plus_1.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     display: block;
     height: 90px;
+    width:90px;
 }
 
-reclaim-one {
+growth-cell icon.gain-card-play{
+    margin-left: 20px;
+    margin-bottom: 7px;
+}
+
+icon.reclaim-one {
     background-image: url('../images/board/Reclaimone.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     display: block;
     height: 90px;
+    width:90px;
 }
 
-jungle-wetland {
+growth-cell icon.reclaim-one{
+    margin-left: 20px;
+    margin-bottom: 7px;
+}
+
+icon.jungle-wetland {
     background-image: url('../images/board/junglewetland.png');
 }
 
-jungle-sand {
+icon.jungle-sand {
     background-image: url('../images/board/junglesand.png');
 }
 
-sand-wetland {
+icon.sand-wetland {
     background-image: url('../images/board/sandwetland.png');
 }
 
-mountain-jungle {
+icon.mountain-jungle {
     background-image: url('../images/board/mountainjungle.png');
 }
 
-mountain-wetland {
+icon.mountain-wetland {
     background-image: url('../images/board/mountainwetland.png');
 }
 
-mountain-sand {
+icon.mountain-sand {
     background-image: url('../images/board/mountainsand.png');
 }
 
-sand {
+icon.sand {
     background-image: url('../images/board/sand.png');
 }
 
-mountain {
+icon.mountain {
     background-image: url('../images/board/mountain.png');
 }
 
-jungle {
+icon.jungle {
     background-image: url('../images/board/jungle.png');
 }
 
-wetland {
+icon.wetland {
     background-image: url('../images/board/wetland.png');
 }
 
-ocean {
+icon.ocean {
     background-image: url('../images/board/ocean.png');
 }
 
@@ -319,36 +357,48 @@ none{
     height: 3px;
 }
 
-sand, wetland, jungle, mountain, jungle-wetland, jungle-sand, sand-wetland, mountain-sand, mountain-wetland, mountain-jungle {
+icon.sand, icon.wetland, icon.jungle, icon.mountain, 
+icon.jungle-wetland, icon.jungle-sand, icon.sand-wetland, 
+icon.mountain-sand, icon.mountain-wetland, icon.mountain-jungle {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     display: block;
     height: 45px;
+    width:70px;
     margin-top: 7px;
     margin-bottom: -5px;
+    margin-left: 39px;
 }
 
-ocean {
+icon.ocean {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     display: block;
     height: 60px;
+    width: 70px;
     margin-top: 0px;
     margin-bottom: -12px;
+    margin-left: 34px;
 }
 
-ignore-range {
+icon.ignore-range {
     background-image: url('../images/board/ignore_range.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     display: block;
     height: 90px;
+    width:90px;
 }
 
-.description dahan {
+growth-cell icon.ignore-range{
+    margin-left: 20px;
+    margin-bottom: 7px;
+}
+
+.description icon.dahan {
     height: 25px;
     width: 25px;
     margin-bottom: -4px;
@@ -357,7 +407,7 @@ ignore-range {
     margin-right: -3px;
 }
 
-dahan {
+icon.dahan {
     background-image: url('../images/board/50px_dahan.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -368,16 +418,16 @@ dahan {
     margin-top: 10px;
 }
 
-special-rule town, special-rule city, special-rule blight,
-special-rule dahan, special-rule presence, special-rule wilds,
-special-rule beast, special-rule disease, special-rule strife,
-special-rule explorer, special-rule badlands, special-rule fear,
-special-rule range-plus-1{
+special-rule icon.town, special-rule icon.city, special-rule icon.blight,
+special-rule icon.dahan, special-rule icon.presence, special-rule icon.wilds,
+special-rule icon.beast, special-rule icon.disease, special-rule icon.strife,
+special-rule icon.explorer, special-rule icon.badlands, special-rule icon.fear,
+special-rule icon.range-plus-1{
     width:30px;
     height:30px
 }
 
-town {
+icon.town {
     background-image: url('../images/board/50px_town.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -389,7 +439,7 @@ town {
     margin-top: 10px;
 }
 
-city {
+icon.city {
     background-image: url('../images/board/75px_city.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -401,21 +451,21 @@ city {
     margin-top: 10px;
 }
 
-innate-info-target blight, innate-info-target no-blight {
+innate-info-target icon.blight, innate-info-target icon.no-blight {
     height: 30px;
     width: 30px;
     margin-bottom: 0px;
     margin-top: 0px;
 }
 
-.description blight {
+.description icon.blight {
     margin-left: -5px;
     margin-right: -5px;
     margin-top: 0px;
     margin-bottom: -4px;
 }
 
-blight {
+icon.blight {
     background-image: url('../images/board/75px_blight.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -427,7 +477,7 @@ blight {
     margin-top: 10px;
 }
 
-no-blight {
+icon.no-blight {
     background-image: url('../images/board/75px_no_blight.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -435,18 +485,6 @@ no-blight {
     display: inline-block;
     height: 25px;
     width: 25px;
-    margin-bottom: -7px;
-    margin-top: 10px;
-}
-
-presence-disease {
-    background-image: url('../images/board/75px_disease.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    display: inline-block;
-    height: 30px;
-    width: 30px;
     margin-bottom: -7px;
     margin-top: 10px;
 }
@@ -468,13 +506,13 @@ add-presence-req {
     font-size: 18pt;
 }
 
-.description presence {
+.description icon.presence {
     height: 25px;
     width: 35px;
     margin-bottom: -8px;
 }
 
-presence {
+icon.presence {
     background-image: url('../images/board/75px_presence.png');
     display: inline-block;
     background-repeat: no-repeat;
@@ -485,7 +523,7 @@ presence {
     margin-bottom: -7px;
 }
 
-beast{
+icon.beast{
     background-image: url('../images/board/beast.png');
     display: inline-block;
     background-repeat: no-repeat;
@@ -498,7 +536,7 @@ beast{
     margin-left: -4px;
 }
 
-.description beast {
+.description icon.beast {
     background-image: url('../images/board/beast.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -510,19 +548,7 @@ beast{
     margin-top: 0px;
 }
 
-presence-beast {
-    background-image: url('../images/board/beast.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    display: inline-block;
-    height: 25px;
-    width: 35px;
-    margin-bottom: -7px;
-    margin-top: 10px;
-}
-
-move-presence {
+icon.move-presence {
     background-image: url('../images/board/75px_presence.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -530,9 +556,10 @@ move-presence {
     display: block;
     height: 18px;
     margin-top: 4px;
+    margin-bottom: 8px;
 }
 
-move-range-1 {
+icon.move-range-1 {
     background-image: url('../images/board/move_range_1.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -540,7 +567,7 @@ move-range-1 {
     display: block;
 }
 
-move-range-2 {
+icon.move-range-2 {
     background-image: url('../images/board/move_range_2.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -548,7 +575,7 @@ move-range-2 {
     display: block;
 }
 
-move-range-3 {
+icon.move-range-3 {
     background-image: url('../images/board/move_range_3.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -556,18 +583,20 @@ move-range-3 {
     display: block;
 }
 
-move-range-1, move-range-2, move-range-3 {
+icon.move-range-1, icon.move-range-2, icon.move-range-3 {
     height: 55px;
+    width: 133px;
     margin-top: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 7px;
 }
 
-range-0, range-1, range-2, range-3, range-4 {
+icon.range-0, icon.range-1, icon.range-2, icon.range-3, icon.range-4 {
     height: 45px;
+    width: 130px;
     margin-top: 11px;
 }
 
-range-0 {
+icon.range-0 {
     background-image: url('../images/board/presence_range_0.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -575,7 +604,7 @@ range-0 {
     display: block;
 }
 
-range-1 {
+icon.range-1 {
     background-image: url('../images/board/presence_range_1.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -583,7 +612,7 @@ range-1 {
     display: block;
 }
 
-range-2 {
+icon.range-2 {
     background-image: url('../images/board/presence_range_2.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -591,7 +620,7 @@ range-2 {
     display: block;
 }
 
-range-3 {
+icon.range-3 {
     background-image: url('../images/board/presence_range_3.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -599,7 +628,7 @@ range-3 {
     display: block;
 }
 
-range-4 {
+icon.range-4 {
     background-image: url('../images/board/presence_range_4.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -680,16 +709,17 @@ gather {
     margin-top: -34px;
 }
 
-growth-cell gain fire, growth-cell gain any, growth-cell gain water, growth-cell gain air, growth-cell gain earth, growth-cell gain animal, growth-cell gain plant, growth-cell gain sun, growth-cell gain moon {
+growth-cell gain icon.fire, growth-cell gain icon.any, growth-cell gain icon.water, growth-cell gain icon.air, growth-cell gain icon.earth, growth-cell gain icon.animal, growth-cell gain icon.plant, growth-cell gain icon.sun, growth-cell gain icon.moon {
     background-repeat: no-repeat;
     background-size: contain;
     display: block;
     height: 60px;
-    margin-left: 0px;
+    width: 60px;
+    margin-left: 39px;
     margin-top: 21px;
 }
 
-growth-cell fire, growth-cell any, growth-cell water, growth-cell air, growth-cell earth, growth-cell animal, growth-cell plant, growth-cell sun, growth-cell moon {
+growth-cell icon.fire, growth-cell icon.any, growth-cell icon.water, growth-cell icon.air, growth-cell icon.earth, growth-cell icon.animal, growth-cell icon.plant, growth-cell icon.sun, growth-cell icon.moon {
     background-repeat: no-repeat;
     background-size: contain;
     display: block;
@@ -699,37 +729,56 @@ growth-cell fire, growth-cell any, growth-cell water, growth-cell air, growth-ce
     margin-bottom: 10px;
 }
 
-move-presence-1 {
+icon.move-presence-1 {
     background-image: url('../images/board/move_presence_1.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     display: block;
     height: 75px;
+    width: 130px;
     margin-top: 20px;
     margin-left: -3px;
+    margin-bottom: 8px;
 }
 
-move-presence-2 {
+icon.move-presence-2 {
     background-image: url('../images/board/move_presence_2.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     display: block;
     height: 75px;
+    width: 130px;
     margin-top: 20px;
     margin-left: -3px;
+    margin-bottom: 8px;
 }
 
-move-presence-3 {
+icon.move-presence-3 {
     background-image: url('../images/board/move_presence_3.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     display: block;
     height: 75px;
+    width: 130px;
     margin-top: 20px;
     margin-left: -3px;
+    margin-bottom: 8px;
+}
+
+icon.move-presence-4 {
+    background-image: url('../images/board/move_presence_4.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: block;
+    height: 75px;
+    width: 130px;
+    margin-top: 20px;
+    margin-left: -3px;
+    margin-bottom: 8px;
 }
 
 energy-track-table {
@@ -787,7 +836,7 @@ card-play-track {
     width: 130px;
 }
 
-any {
+icon.any {
     background-image: url('../images/board/Any.png');
     display: inline-block;
     background-repeat: no-repeat;
@@ -795,7 +844,7 @@ any {
     background-position: center;
 }
 
-fire {
+icon.fire {
     background-image: url('../images/board/Fire.png');
     display: inline-block;
     background-repeat: no-repeat;
@@ -803,7 +852,7 @@ fire {
     background-position: center;
 }
 
-water {
+icon.water {
     background-image: url('../images/board/Water.png');
     display: inline-block;
     background-repeat: no-repeat;
@@ -811,7 +860,7 @@ water {
     background-position: center;
 }
 
-moon {
+icon.moon {
     background-image: url('../images/board/Moon.png');
     display: inline-block;
     background-repeat: no-repeat;
@@ -819,7 +868,7 @@ moon {
     background-position: center;
 }
 
-air {
+icon.air {
     background-image: url('../images/board/Air.png');
     display: inline-block;
     background-repeat: no-repeat;
@@ -827,7 +876,7 @@ air {
     background-position: center;
 }
 
-animal {
+icon.animal {
     background-image: url('../images/board/Animal.png');
     display: inline-block;
     background-repeat: no-repeat;
@@ -835,7 +884,7 @@ animal {
     background-position: center;
 }
 
-plant {
+icon.plant {
     background-image: url('../images/board/Plant.png');
     display: inline-block;
     background-repeat: no-repeat;
@@ -843,7 +892,7 @@ plant {
     background-position: center;
 }
 
-sun {
+icon.sun {
     background-image: url('../images/board/Sun.png');
     display: inline-block;
     background-repeat: no-repeat;
@@ -851,7 +900,7 @@ sun {
     background-position: center;
 }
 
-earth {
+icon.earth {
     background-image: url('../images/board/Earth.png');
     display: inline-block;
     background-repeat: no-repeat;
@@ -859,7 +908,7 @@ earth {
     background-position: center;
 }
 
-energy-track reclaim-one, card-play-special reclaim-one {
+energy-track icon.reclaim-one, card-play-special icon.reclaim-one {
     background-image: url('../images/board/Reclaimone.png');
     display: inline-block;
     background-repeat: no-repeat;
@@ -867,7 +916,7 @@ energy-track reclaim-one, card-play-special reclaim-one {
     background-position: center;
 }
 
-card-play-special reclaim-one {
+card-play-special icon.reclaim-one {
     background-repeat: no-repeat;
     background-size: contain;
     display: block;
@@ -876,32 +925,24 @@ card-play-special reclaim-one {
     margin-bottom: -5px;
 }
 
-element-bottom reclaim-one{
+element-bottom icon.reclaim-one{
     margin-top: -55px;
-    margin-left: 28px;
-    margin-bottom: -14px;
+    margin-left: 33px;
+    margin-bottom: -18px;
 }
 
-energy-track any, energy-track fire, energy-track water, energy-track moon, energy-track air, energy-track animal, energy-track plant, energy-track sun, energy-track earth, card-play-special any, card-play-special fire, card-play-special water, card-play-special moon, card-play-special air, card-play-special animal, card-play-special plant, card-play-special sun, card-play-special earth, energy-top, card-play-top, element-top {
+energy-track icon.any, energy-track icon.fire, energy-track icon.water, energy-track icon.moon, energy-track icon.air, energy-track icon.animal, energy-track icon.plant, energy-track icon.sun, energy-track icon.earth, card-play-special icon.any, card-play-special icon.fire, card-play-special icon.water, card-play-special icon.moon, card-play-special icon.air, card-play-special icon.animal, card-play-special icon.plant, card-play-special icon.sun, card-play-special icon.earth, energy-top, card-play-top, element-top {
     background-repeat: no-repeat;
     background-size: contain;
     display: block;
     height: 60px;
-    margin-left: -6px;
+    width: 60px;
+    margin-left: 33px;
     margin-top: 35px;
+    margin-bottom: 3px;
 }
 
-element-top air, element-top fire, element-top any, element-top water, element-top animal, element-top earth, element-top plant, element-top sun, element-top moon {
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 65px;
-    width: 65px;
-    display: block;
-}
-
-card-play-track element-combination element-top air, card-play-track element-combination element-top fire, card-play-track element-combination element-top any, 
-card-play-track element-combination element-top water, card-play-track element-combination element-top animal, card-play-track element-combination element-top earth, 
-card-play-track element-combination element-top plant, card-play-track element-combination element-top sun, card-play-track element-combination element-top moon {
+element-top icon.air, element-top icon.fire, element-top icon.any, element-top icon.water, element-top icon.animal, element-top icon.earth, element-top icon.plant, element-top icon.sun, element-top icon.moon {
     background-repeat: no-repeat;
     background-size: contain;
     height: 65px;
@@ -910,7 +951,18 @@ card-play-track element-combination element-top plant, card-play-track element-c
     margin-left: -9px;
 }
 
-element-bottom air, element-bottom fire, element-bottom any, element-bottom water, element-bottom animal, element-bottom earth, element-bottom plant, element-bottom sun, element-bottom moon {
+card-play-track element-combination element-top icon.air, card-play-track element-combination element-top icon.fire, card-play-track element-combination element-top icon.any, 
+card-play-track element-combination element-top icon.water, card-play-track element-combination element-top icon.animal, card-play-track element-combination element-top icon.earth, 
+card-play-track element-combination element-top icon.plant, card-play-track element-combination element-top icon.sun, card-play-track element-combination element-top icon.moon {
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 65px;
+    width: 65px;
+    display: block;
+    margin-left: -9px;
+}
+
+element-bottom icon.air, element-bottom icon.fire, element-bottom icon.any, element-bottom icon.water, element-bottom icon.animal, element-bottom icon.earth, element-bottom icon.plant, element-bottom icon.sun, element-bottom icon.moon {
     background-repeat: no-repeat;
     background-size: contain;
     height: 65px;
@@ -921,9 +973,9 @@ element-bottom air, element-bottom fire, element-bottom any, element-bottom wate
     margin-bottom: -24px;
 }
 
-card-play-track element-bottom air, card-play-track element-bottom water, card-play-track element-bottom sun,
-card-play-track element-bottom fire, card-play-track element-bottom earth, card-play-track element-bottom animal, 
-card-play-track element-bottom moon, card-play-track element-bottom plant, card-play-track element-bottom any
+card-play-track element-bottom icon.air, card-play-track element-bottom icon.water, card-play-track element-bottom icon.sun,
+card-play-track element-bottom icon.fire, card-play-track element-bottom icon.earth, card-play-track element-bottom icon.animal, 
+card-play-track element-bottom icon.moon, card-play-track element-bottom icon.plant, card-play-track element-bottom icon.any
  {
     background-repeat: no-repeat;
     background-size: contain;
@@ -932,12 +984,12 @@ card-play-track element-bottom moon, card-play-track element-bottom plant, card-
     display: block;
     margin-left: 50px;
     margin-top: -30px;
-    margin-bottom: -15px;
+    margin-bottom: -18px;
 }
 
-card-play-special any, card-play-special fire, card-play-special water, card-play-special moon, card-play-special air, card-play-special animal, card-play-special plant, card-play-special sun, card-play-special earth {
+card-play-special icon.any, card-play-special icon.fire, card-play-special icon.water, card-play-special icon.moon, card-play-special icon.air, card-play-special icon.animal, card-play-special icon.plant, card-play-special icon.sun, card-play-special icon.earth {
     margin-bottom: 8px;
-    margin-left: -2px;
+    margin-left: 37px;
 }
 
 energy-track-initial value {
@@ -997,6 +1049,7 @@ energy-track value {
 energy-top, energy-bottom {
     background-image: url('../images/board/EnergyBlank.png');
     height: 90px;
+    width: 90px;
 }
 
 card-play-top{
@@ -1062,7 +1115,7 @@ energy-track subtext, energy-track-ring subtext {
 
 card-play-track subtext {
     font-family: 'Lato-SemiboldItalic';
-    font-size: 17pt;
+    font-size: 16pt;
     font-weight: bold;
     font-style: italic;
     display: inline-block;
@@ -1085,7 +1138,7 @@ presence-tracks {
     height: 350px;
 }
 
-player-spirit{
+icon.player-spirit{
     background-image: url('../images/board/player-spirit.png');
     display: inline-block;
     background-repeat: no-repeat;
@@ -1093,7 +1146,7 @@ player-spirit{
     background-position: center;
 }
 
-player-spirit {
+icon.player-spirit {
     width: 30px;
     height: 30px;
 }
@@ -1356,7 +1409,7 @@ range-plus-1, range-plus-2, range-plus-3, range-plus-4 {
     margin-right: 0px;
 }
 
-sacred-site {
+icon.sacred-site {
     background-image: url('../images/board/sacred_site.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -1364,22 +1417,22 @@ sacred-site {
     width: 50px;
 }
 
-presence {
+icon.presence {
     background-image: url('../images/board/75px_presence.png');
     background-repeat: no-repeat;
     background-size: contain;
     display: inline-block;
 }
 
-innate-info-range sacred-site {
+innate-info-range icon.sacred-site {
     width: 50px;
     height: 50px;
-    margin-bottom: -20px;
+    margin-bottom: -10px;
     margin-left: 0px;
     margin-right: 10px;
 }
 
-presence {
+icon.presence {
     width: 35px;
     height: 35px;
     margin-bottom: -13px;
@@ -1387,7 +1440,7 @@ presence {
     margin-right: 0px;
 }
 
-explorer {
+icon.explorer {
     background-image: url('../images/board/explorer.png');
     display: inline-block;
     background-repeat: no-repeat;
@@ -1400,7 +1453,7 @@ explorer {
     margin-right: -5px;
 }
 
-dahan {
+icon.dahan {
     background-image: url('../images/board/dahan.png');
     display: inline-block;
     background-repeat: no-repeat;
@@ -1413,7 +1466,7 @@ dahan {
     margin-right: 5px;
 }
 
-disease {
+icon.disease {
     background-image: url('../images/board/75px_disease.png');
     display: inline-block;
     background-repeat: no-repeat;
@@ -1426,7 +1479,7 @@ disease {
     margin-right: 0px;
 }
 
-strife {
+icon.strife {
     background-image: url('../images/board/75px_strife.png');
     display: inline-block;
     background-repeat: no-repeat;
@@ -1439,7 +1492,7 @@ strife {
     margin-right: 0px;
 }
 
-wilds {
+icon.wilds {
     background-image: url('../images/board/wilds.png');
     display: inline-block;
     background-repeat: no-repeat;
@@ -1452,7 +1505,7 @@ wilds {
     margin-right: -5px;
 }
 
-badlands {
+icon.badlands {
     background-image: url('../images/board/48px_badlands.png');
     display: inline-block;
     background-repeat: no-repeat;
@@ -1465,7 +1518,7 @@ badlands {
     margin-right: -4px;
 }
 
-fear {
+icon.fear {
     background-image: url('../images/board/fear.png');
     display: inline-block;
     background-repeat: no-repeat;
@@ -1478,40 +1531,42 @@ fear {
     margin-right: -5px;
 }
 
-range-0 {
+icon.range-0 {
     background-image: url('../images/board/presence_range_0.png');
 }
 
-range-1 {
+icon.range-1 {
     background-image: url('../images/board/presence_range_1.png');
 }
 
-range-2 {
+icon.range-2 {
     background-image: url('../images/board/presence_range_2.png');
 }
 
-range-3 {
+icon.range-3 {
     background-image: url('../images/board/presence_range_3.png');
 }
 
-range-4 {
+icon.range-4 {
     background-image: url('../images/board/presence_range_4.png');
 }
 
-innate-info-range range-0, innate-info-range range-1, innate-info-range range-2, innate-info-range range-3, innate-info-range range-4 {
+innate-info-range icon.range-0, innate-info-range icon.range-1, innate-info-range icon.range-2, 
+innate-info-range icon.range-3, innate-info-range icon.range-4 {
     width: 75px;
     height: 75px;
     margin-left: -10px;
-    margin-bottom: 17px;
+    margin-bottom: 10px;
 }
 
-.description range-0, .description range-1, .description range-2, .description range-3, .description range-4 {
+.description icon.range-0, .description icon.range-1, .description icon.range-2, 
+.description icon.range-3, .description icon.range-4 {
     width: 45px;
     height: 30px;
     margin-left: 0px;
 }
 
-threshold sun, threshold earth, threshold plant, threshold fire, threshold air, threshold moon, threshold animal, threshold water {
+threshold icon.sun, threshold icon.earth, threshold icon.plant, threshold icon.fire, threshold icon.air, threshold icon.moon, threshold icon.animal, threshold icon.water {
     width: 45px;
     height: 45px;
     margin-bottom: -9px;
@@ -1519,7 +1574,7 @@ threshold sun, threshold earth, threshold plant, threshold fire, threshold air, 
     margin-right: 5px;
 }
 
-.description sun, .description earth, .description plant, .description fire, .description air, .description moon, .description animal, .description water, special-rule sun, special-rule earth, special-rule plant, special-rule fire, special-rule air, special-rule moon, special-rule animal, special-rule water {
+.description icon.sun, .description icon.earth, .description icon.plant, .description icon.fire, .description icon.air, .description icon.moon, .description icon.animal, .description icon.water, special-rule icon.sun, special-rule icon.earth, special-rule icon.plant, special-rule icon.fire, special-rule icon.air, special-rule icon.moon, special-rule icon.animal, special-rule icon.water {
     width: 45px;
     height: 30px;
     margin-left: -10px;
@@ -1527,7 +1582,7 @@ threshold sun, threshold earth, threshold plant, threshold fire, threshold air, 
     margin-bottom: -7px;
 }
 
-description-container city {
+description-container icon.city {
     width: 35px;
     height: 35px;
     margin-bottom: -10px;

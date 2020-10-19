@@ -24,7 +24,7 @@ General Images: Every image in a board can be called by simply using its name as
   - **growth**: The container for the Growth Options
     - growth title: Usually "Growth (PICK ONE)" (For now, new features coming soon)
     - growth-group: Each individual section in the Growth section
-      - growth-group class: The actual values that will be used to create the Growth section.
+      - growth-group values: The actual values that will be used to create the Growth section.
         - Supported Options:
           - reclaim-all: Reclaim All
           - reclaim-one: Reclaim One

@@ -18,15 +18,15 @@
         <special-rules-container>
             <special-rules-subtitle>Mountain Home</special-rules-subtitle>
             <special-rule>
-                For each <fire></fire> showing on your <presence></presence> tracks, do 1 Damage.
+                For each {fire} showing on your {presence} tracks, do 1 Damage.
             </special-rule>
             <special-rules-subtitle>Collapse in a blast of lava and steam</special-rules-subtitle>
             <special-rule>
-                Push all <beast></beast> and any number of <dahan></dahan>.
+                Push all {beast} and any number of {dahan}.
             </special-rule>
             <special-rules-subtitle>volcanic blah blah blah</special-rules-subtitle>
             <special-rule>
-                Cards gain <range-plus-1></range-plus-1> if <blight></blight> and <strife></strife> and <disease></disease> and <town></town> and <city></city> and <explorer></explorer> and <beast></beast> and <wilds></wilds> and <badlands></badlands> and <fear></fear>
+                Cards gain <range-plus-1></range-plus-1> if {blight} and {strife} and {disease} and {town} and {city} and {explorer} and {beast} and {wilds} and {badlands} and {fear}
             </special-rule>
         </special-rules-container>
 
@@ -34,9 +34,9 @@
         Gain 2 of an Element-->
 
         <growth title="Growth (PICK ONE)">
-            <growth-group class="reclaim-one;gain-power-card;gain-energy(3)"></growth-group>
-            <growth-group class="add-presence(2,ocean);gain-element(fire)"></growth-group>
-            <growth-group class="move-presence(2);presence-no-range;add-presence(3,mountain-jungle)"></growth-group>
+            <growth-group values="reclaim-one;gain-power-card;gain-energy(3)"></growth-group>
+            <growth-group values="add-presence(2,ocean);gain-element(fire)"></growth-group>
+            <growth-group values="move-presence(2);presence-no-range;add-presence(3,mountain-jungle)"></growth-group>
         </growth>
 
         <!--TODO:Things to add/test
@@ -48,6 +48,26 @@
         </presence-tracks>
 
         <innate-powers>
+            <!--
+            <quick-innate-power
+                speed="fast"
+                range="0"
+                target="{blight}"
+                target-title="TARGET LAND">
+            <level threshold="1-plant">
+                1 Damage per 2 {fire} you have.
+            </level>
+            <level threshold="3-plant">
+                Instead, 1 Damage per {fire} you have.
+            </level>
+            <level threshold=|4-fire,2-air">
+                You may splut this Power's damage among any number of lands with {blight} where you have {presence}.
+            </level>
+            <level threshold="7-fire">
+                In {blight} where {presence} you {dahan} have {wilds} and {strife} then {badlands} and {disease}.
+            </level>
+            </quick-innate-power>-->
+
             <innate-power class="fast">
                 <innate-power-title>explosion</innate-power-title>
                 <info-container>
@@ -59,37 +79,37 @@
                     <info>
                         <innate-info-speed></innate-info-speed>
                         <innate-info-range>
-                            <range-0></range-0>
+                            {range-0}
                         </innate-info-range>
                         <innate-info-target>
-                            <blight></blight>
+                            {blight}
                         </innate-info-target>
                     </info>
                 </info-container>
                 <description-container>
                     <level>
                         <threshold>
-                            1<plant></plant>
+                            1{plant}
                         </threshold>
-                        <div class="description" id="single-line">1 Damage per 2 <fire></fire> you have.</div>
+                        <div class="description" id="single-line">1 Damage per 2 {fire} you have.</div>
                     </level>
                     <level>
                         <threshold>
-                            3<plant></plant>
+                            3{plant}
                         </threshold>
-                        <div class="description" id="single-line">Instead, 1 Damage per <fire></fire> you have.</div>
+                        <div class="description" id="single-line">Instead, 1 Damage per {fire} you have.</div>
                     </level>
                     <level>
                         <threshold>
-                            4<fire></fire>2<air></air>
+                            4{fire}2{air}
                         </threshold>
-                        <div class="description">You may split this Power's damage among any number of lands with <blight></blight> where you have <presence></presence>.</div>
+                        <div class="description">You may split this Power's damage among any number of lands with {blight} where you have {presence}.</div>
                     </level>
                     <level>
                         <threshold>
-                            7<fire></fire>
+                            7{fire}
                         </threshold>
-                        <div class="description">In <blight></blight> where <presence></presence> you <dahan></dahan> have <wilds></wilds> and <strife></strife> then <badlands></badlands> and <disease></disease>.</div>
+                        <div class="description">In {blight} where {presence} you {dahan} have {wilds} and {strife} then {badlands} and {disease}.</div>
                     </level>
                 </description-container>
             </innate-power>
@@ -104,35 +124,35 @@
                     <info>
                         <innate-info-speed></innate-info-speed>
                         <innate-info-range>
-                            <sacred-site></sacred-site>
-                            <range-1></range-1>
+                            {sacred-site}
+                            {range-1}
                         </innate-info-range>
                         <innate-info-target>
-                            <player-spirit></player-spirit>
+                            {player-spirit}
                         </innate-info-target>
                     </info>
                 </info-container>
                 <description-container>
                     <level>
                         <threshold>
-                            2<moon></moon>1<fire></fire>
+                            2{moon}1{fire}
                         </threshold>
                         <div class="description">Turn any face-down Fear Card face-up (It's earned/resolved normally,
                             but players can see what's coming.</div>
                     </level>
                     <level>
                         <threshold>
-                            3<moon></moon>2<fire></fire>
+                            3{moon}2{fire}
                         </threshold>
-                        <div class="description">Destroy up to 2 <explorer></explorer>.
-                            1 <fear></fear> per <explorer></explorer> destroyed.</div>
+                        <div class="description">Destroy up to 2 {explorer}.
+                            1 {fear} per {explorer} destroyed.</div>
                     </level>
                     <level>
                         <threshold>
-                            3<moon></moon>2<fire></fire>
+                            3{moon}2{fire}
                         </threshold>
-                        <div class="description">Destroy up to 2 <explorer></explorer>.
-                            1 <fear></fear> per <explorer></explorer> destroyed.</div>
+                        <div class="description">Destroy up to 2 {explorer}.
+                            1 {fear} per {explorer} destroyed.</div>
                     </level>
                 </description-container>
             </innate-power>
