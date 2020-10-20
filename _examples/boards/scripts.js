@@ -1,9 +1,8 @@
 
 window.onload = function startMain(){
     parseGrowthTags();
-    var newEnergyTrack = parseEnergyTrackTags();
-    var newCardPlayTrack = parseCardPlayTrackTags();
-    setNewEnergyCardPlayTracks(newEnergyTrack, newCardPlayTrack);
+    setNewEnergyCardPlayTracks(parseEnergyTrackTags(), parseCardPlayTrackTags());
+    parseInnatePowers();
     var html = document.querySelectorAll('board')[0].innerHTML;
     document.querySelectorAll('board')[0].innerHTML = replaceIcon(html);
     dynamicCellWidth();
@@ -287,16 +286,20 @@ function dynamicCellWidth() {
 
         iconCount = icon.length;
 
-        //console.log(fireCount);
         dynamicThresholdWidth = 
             (iconCount * ICONWIDTH) + (iconCount * 12);
-        //console.log(dynamicThresholdWidth);
         formattedWidth = dynamicThresholdWidth + "px";
-        //console.log(formattedWidth);
         thresholds[i].style.width = formattedWidth;
-        //console.log("End row");
     }
-
+    var description = document.getElementsByClassName("description");
+    for(i = 0; i < description.length; i++){
+        var textWidth = description[i].clientHeight;
+        if (textWidth < 50){
+            description[i].id = "single-line";
+        }
+        console.log(textWidth);
+    }
+    console.log(description);
 }
 
 function replaceIcon(html)
@@ -315,7 +318,52 @@ function replaceIcon(html)
   return result;
 }
 
-function quickInnatePowers(){
-    var growthHTML = document.getElementsByTagName("quick-innate-power");
+function parseInnatePowers(){
+    var fullHTML = "";
     
+    var innateHTML = document.getElementsByTagName("quick-innate-power");
+    console.log(innateHTML);
+
+    for(i = 0; i < innateHTML.length; i++){
+        var innatePowerHTML = innateHTML[i];
+        var currentPowerHTML = "<innate-power class='"+innatePowerHTML.getAttribute("speed")+"'>";
+        
+        //Innater Power title
+        currentPowerHTML += "<innate-power-title>"+innatePowerHTML.getAttribute("name")+"</innate-power-title><info-container><info-title>";
+        
+        //Innate Power Speed and Range Header
+        currentPowerHTML += "<info-title-speed>SPEED</info-title-speed><info-title-range>RANGE</info-title-range>";
+        
+        //Innate Power Target Header
+        currentPowerHTML += "<info-title-target>"+innatePowerHTML.getAttribute("target-title")+"</info-title-target></info-title><info>";
+        
+        //Innater Power Speed value
+        currentPowerHTML += "<innate-info-speed></innate-info-speed>";
+        
+        //Innate Power Range value
+        currentPowerHTML += "<innate-info-range>"+innatePowerHTML.getAttribute("range")+"</innate-info-range>";
+        
+        //Innate Power Target value
+        currentPowerHTML += "<innate-info-target>"+innatePowerHTML.getAttribute("target")+"</innate-info-target></info></info-container><description-container>";
+        
+        //Innate Power Levels and Thresholds
+        var currentLevels = innatePowerHTML.getElementsByTagName("level");
+        for (j = 0; j < currentLevels.length; j++){
+            var currentThreshold = currentLevels[j].getAttribute("threshold");
+            var currentThresholdPieces = currentThreshold.split(",");
+            currentPowerHTML += "<level><threshold>";
+            for (k = 0; k < currentThresholdPieces.length; k++){
+                currentThresholdPieces[k] = currentThresholdPieces[k].replace("-","{");
+                currentThresholdPieces[k] += "}";
+                currentPowerHTML += currentThresholdPieces[k];
+            }
+            currentPowerHTML += "</threshold><div class='description'>";
+            var currentDescription = currentLevels[j].innerHTML;
+            console.log(currentDescription);
+            currentPowerHTML += currentDescription+"</div></level>";
+        }
+        fullHTML += currentPowerHTML+"</description-container></innate-power>";
+    }
+    //console.log(fullHTML);
+    document.getElementsByTagName("innate-powers")[0].innerHTML = fullHTML;
 }

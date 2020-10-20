@@ -4,9 +4,9 @@ The fastest way to get started is to start from the example template in the fold
 
 ## Custom HTML Tag
 
-The board template use a lot of custom HTML tags, here is a quick summary:
+The board template uses some custom HTML tags, here is a quick summary:
 
-General Images: Every image in a board can be called by simply using its name as a separate tag. Here is a list of what is available:
+General Images: Every image in a board can be called by simply using its name enclosed within "{}". Here is a list of what is available:
 - Elements (fire, water, earth, air, plant, animal, sun, moon)
 - Invaders (explorer, town, city)
 - Island symbols (blight, dahan, fear, disease, wilds, beast, strife, badlands)
@@ -54,22 +54,13 @@ General Images: Every image in a board can be called by simply using its name as
           - Combinations of Elements/Energy: (3+earth, 2+fire, earth+any, water+plant
           - Reclaim One: reclaim-one, 3+reclaim-one, earth+reclaim-one
   - **innate-powers**: The container for the Innate Powers
-    - innate-power: The container for a single Innate Power
-      - class="fast": The Innate Power is Fast
-      - class="slow": The Innate Power is Slow
-      - innate-power-title: The title of the Innate Power
-      - info-container: The container for the information
-        - info-title: The box that provides the header for the speed, range, and target
-        - info: The specific information for the above info-title
-          - innate-info-speed: Taken care of by the class attribute of innate-power
-          - innate-info-range: Defines the range of the Innate Power
-            - option: option consists of the following: range-0, range-1, range-2, range-3, or range-4
-            - Note: You can put in a sacred site by using the sacred-site tag
-          - innate-info-target: Defines the target land for the Innate Power
-            - Note: This may also be player-spirit 
-      - description-container: The container for the description of the Innate Power
-        - level: The container that holds each level of the Innate Power
-          - threshold: The threshold portion of the Innate Power
-            - Note: This is usually in the format of: x<element>Y<element> etc.
-          - div class="description": What the Innate Power does
-            - div id="single-line": Used when the description is only a single line (it fixes spacing issues)
+    - quick-innate-power: The container for a single Innate Power
+      - name: The name of the Innate Power
+      - speed: Either "fast" or "slow"
+      - range: {range-0}, {range-1}, {range-2}, {range-3}, or {range-4}. Also supports (sacred-site}
+      - target: The value for the target land
+      - target-title: Either "TARGET" or "TARGET LAND"
+      - level: Contains the information for one level of an Innate Power
+        - threshold: Contains the elemental information for the threshold:
+          - Example: 1-plant,2-fire
+        - The actual text for the level sits within the level tag

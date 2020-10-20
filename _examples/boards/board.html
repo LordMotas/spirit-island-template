@@ -48,114 +48,44 @@
         </presence-tracks>
 
         <innate-powers>
-            <!--
             <quick-innate-power
+                name="explosion"
                 speed="fast"
-                range="0"
+                range="{range-0}"
                 target="{blight}"
                 target-title="TARGET LAND">
+            <level threshold="1-plant">
+                1 Damage per 2 fire you have.
+            </level>
+            <level threshold="3-plant">
+                Instead, 1 Damage per {fire} you have.
+            </level>
+            <level threshold="4-fire,2-air">
+                You may split this Power's damage among any number of lands with {blight} where you have {presence}.
+            </level>
+            <level threshold="7-fire">
+                In {blight} where {presence} you {dahan} have {wilds} and {strife} then {badlands} and {disease}.
+            </level>
+            </quick-innate-power>
+            <quick-innate-power
+                name="explosion2"
+                speed="slow"
+                range="{sacred-site}{range-1}"
+                target="{player-spirit}"
+                target-title="TARGET">
             <level threshold="1-plant">
                 1 Damage per 2 {fire} you have.
             </level>
             <level threshold="3-plant">
                 Instead, 1 Damage per {fire} you have.
             </level>
-            <level threshold=|4-fire,2-air">
-                You may splut this Power's damage among any number of lands with {blight} where you have {presence}.
+            <level threshold="4-fire,2-air">
+                You may split this Power's damage among any number of lands with {blight} where you have {presence}.
             </level>
             <level threshold="7-fire">
                 In {blight} where {presence} you {dahan} have {wilds} and {strife} then {badlands} and {disease}.
             </level>
-            </quick-innate-power>-->
-
-            <innate-power class="fast">
-                <innate-power-title>explosion</innate-power-title>
-                <info-container>
-                    <info-title>
-                        <info-title-speed>SPEED</info-title-speed>
-                        <info-title-range>RANGE</info-title-range>
-                        <info-title-target>TARGET</info-title-target>
-                    </info-title>
-                    <info>
-                        <innate-info-speed></innate-info-speed>
-                        <innate-info-range>
-                            {range-0}
-                        </innate-info-range>
-                        <innate-info-target>
-                            {blight}
-                        </innate-info-target>
-                    </info>
-                </info-container>
-                <description-container>
-                    <level>
-                        <threshold>
-                            1{plant}
-                        </threshold>
-                        <div class="description" id="single-line">1 Damage per 2 {fire} you have.</div>
-                    </level>
-                    <level>
-                        <threshold>
-                            3{plant}
-                        </threshold>
-                        <div class="description" id="single-line">Instead, 1 Damage per {fire} you have.</div>
-                    </level>
-                    <level>
-                        <threshold>
-                            4{fire}2{air}
-                        </threshold>
-                        <div class="description">You may split this Power's damage among any number of lands with {blight} where you have {presence}.</div>
-                    </level>
-                    <level>
-                        <threshold>
-                            7{fire}
-                        </threshold>
-                        <div class="description">In {blight} where {presence} you {dahan} have {wilds} and {strife} then {badlands} and {disease}.</div>
-                    </level>
-                </description-container>
-            </innate-power>
-            <innate-power class="slow">
-                <innate-power-title>darkness swallows the unwary</innate-power-title>
-                <info-container>
-                    <info-title>
-                        <info-title-speed>SPEED</info-title-speed>
-                        <info-title-range>RANGE</info-title-range>
-                        <info-title-target>TARGET</info-title-target>
-                    </info-title>
-                    <info>
-                        <innate-info-speed></innate-info-speed>
-                        <innate-info-range>
-                            {sacred-site}
-                            {range-1}
-                        </innate-info-range>
-                        <innate-info-target>
-                            {player-spirit}
-                        </innate-info-target>
-                    </info>
-                </info-container>
-                <description-container>
-                    <level>
-                        <threshold>
-                            2{moon}1{fire}
-                        </threshold>
-                        <div class="description">Turn any face-down Fear Card face-up (It's earned/resolved normally,
-                            but players can see what's coming.</div>
-                    </level>
-                    <level>
-                        <threshold>
-                            3{moon}2{fire}
-                        </threshold>
-                        <div class="description">Destroy up to 2 {explorer}.
-                            1 {fear} per {explorer} destroyed.</div>
-                    </level>
-                    <level>
-                        <threshold>
-                            3{moon}2{fire}
-                        </threshold>
-                        <div class="description">Destroy up to 2 {explorer}.
-                            1 {fear} per {explorer} destroyed.</div>
-                    </level>
-                </description-container>
-            </innate-power>
+            </quick-innate-power>
         </innate-powers>
 
     </board>
